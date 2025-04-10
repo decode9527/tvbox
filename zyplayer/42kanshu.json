@@ -1,0 +1,47 @@
+{
+  "sourceName": "42看书网",
+  "sourceUrl": "https://www.42kanshu.com",
+  "head": "{\"User-Agent\": \"Mozilla/5.0\"}",
+  "recommend": [
+    {
+      "recommendName": "玄幻奇幻",
+      "recommendUrl": "/category/xuanhuan/"
+    }
+  ],
+  "recommendBooks": {
+    "books": "//*[@id=\"main\"]/div/div[2]/ul/li",
+    "name": "./div[2]/h3/a/text()",
+    "author": "./div[2]/p/span/text()",
+    "cover": "./div[1]/a/img/@src",
+    "bookUrl": "./div[1]/a/@href"
+  },
+  "search": {
+    "url": "/search/",
+    "method": "GET",
+    "body": "keyword=&key&",
+    "contentType": "text/html; charset=utf-8"
+  },
+  "searchBooks": {
+    "books": "//*[@id=\"content\"]/div/div[2]/ul/li",
+    "name": "./div[2]/h3/a/text()",
+    "author": "./div[2]/p/span/text()",
+    "cover": "./div[1]/a/img/@src",
+    "bookUrl": "./div[1]/a/@href"
+  },
+  "bookInfo": {
+    "name": "//*[@id=\"bookinfo\"]/h1/text()",
+    "author": "//*[@id=\"bookinfo\"]/p[1]/a/text()",
+    "cover": "//*[@id=\"bookimg\"]/img/@src",
+    "intro": "//*[@id=\"intro\"]/text()",
+    "chapterUrl": "//*[@id=\"bookinfo\"]/div/a/@href"
+  },
+  "chapter": {
+    "chapterList": "//*[@id=\"chapterlist\"]/dd[position()>9]",
+    "chapterName": "./a/text()",
+    "chapterUrl": "./a/@href"
+  },
+  "chapterContent": {
+    "content": "//*[@id=\"content\"]/text()",
+    "replaceReg": "\\s*"
+  }
+}
